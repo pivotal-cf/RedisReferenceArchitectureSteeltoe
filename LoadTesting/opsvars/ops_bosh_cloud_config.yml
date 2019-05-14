@@ -1,0 +1,6 @@
+---
+stemcell_os: ubuntu-xenial
+services_network: sanleandro-services-subnet
+worker_vm_size: toolsmiths.n1-highmem-2.128
+errand_vm_size: toolsmiths.custom-1-4.32
+default_az: europe-west1-c

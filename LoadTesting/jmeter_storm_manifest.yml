@@ -1,0 +1,45 @@
+---
+name: jmeter_storm
+
+releases:
+- name: "jmeter-tornado"
+  version: "2.1.1"
+  url: "https://bosh.io/d/github.com/jamlo/jmeter-bosh-release?v=2.1.1"
+  sha1: "c47ae7cd0094c5d9275ec083a8cdeef894f0064a"
+
+stemcells:
+- alias: ubuntu
+  os: ((stemcell_os))
+  version: latest
+
+instance_groups:
+- name: workers
+  instances: 1
+  vm_type: ((worker_vm_size))
+  stemcell: ubuntu
+  azs: [((default_az))]
+  networks:
+  - name: ((services_network))
+  jobs:
+  - name: jmeter_storm_worker
+    release: jmeter-tornado
+
+- name: storm
+  instances: 1
+  lifecycle: errand
+  vm_type: ((errand_vm_size))
+  stemcell: ubuntu
+  azs: [((default_az))]
+  networks:
+  - name: ((services_network))
+  jobs:
+  - name: jmeter_storm
+    release: jmeter-tornado
+    properties:
+      raw_jmx_plan: ((jmx_plan))
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000

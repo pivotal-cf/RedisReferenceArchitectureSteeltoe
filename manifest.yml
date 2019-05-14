@@ -1,0 +1,11 @@
+---
+applications:
+- name: simple_cached_persistent_store_app
+  path: ./src/SimpleCachedPersistentStoreApp/
+  services:
+  - sql_01
+  - redis_01
+- name: simple_cached_app
+  path: ./src/SimpleCachedApp/
+  services:
+  - redis_01
