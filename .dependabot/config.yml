@@ -6,4 +6,4 @@ update_configs:
   update_schedule: "daily"
 - package_manager: "dotnet:nuget"
   directory: "/src/SimpleCachedPersistentStoreApp"
-  update_schedule: "live"
+  update_schedule: "daily"
