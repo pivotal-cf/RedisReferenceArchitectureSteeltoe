@@ -17,6 +17,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1"/>
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="4.0.1"/>
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="4.5.5"/>
-    <PackageReference Include="MySql.Data" Version="8.0.16"/>
+    <PackageReference Include="MySql.Data" Version="8.0.17"/>
   </ItemGroup>
 </Project>
