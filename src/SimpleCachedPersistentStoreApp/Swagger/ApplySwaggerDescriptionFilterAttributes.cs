@@ -1,12 +1,13 @@
 using System.Reflection;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using Microsoft.OpenApi.Models;
 
 namespace SimpleCachedPersistentStoreApp.Swagger
 {
     public class ApplySwaggerDescriptionFilterAttributes : IOperationFilter
     {
-        public void Apply(Operation operation, OperationFilterContext context)
+        public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
             foreach (var attr in context.MethodInfo.DeclaringType.GetTypeInfo().GetCustomAttributes(true))
             {

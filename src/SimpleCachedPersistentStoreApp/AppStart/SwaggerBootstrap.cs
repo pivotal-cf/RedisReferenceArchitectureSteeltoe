@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 
 namespace SimpleCachedPersistentStoreApp.AppStart
 {
@@ -12,12 +13,12 @@ namespace SimpleCachedPersistentStoreApp.AppStart
             {
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1",
-                new Info
+                new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "Simple Cached Persistent Store App",
                     Description = "An App running on top of a Redis Cache and a persistent backing store",
-                    TermsOfService = "None"
+                    TermsOfService = new System.Uri("None")
                 });
             });
         }
