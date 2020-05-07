@@ -17,8 +17,7 @@ namespace SimpleCachedPersistentStoreApp.AppStart
                 {
                     Version = "v1",
                     Title = "Simple Cached Persistent Store App",
-                    Description = "An App running on top of a Redis Cache and a persistent backing store",
-                    TermsOfService = new System.Uri("None")
+                    Description = "An App running on top of a Redis Cache and a persistent backing store"
                 });
             });
         }

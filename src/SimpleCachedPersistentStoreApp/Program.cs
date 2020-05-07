@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Steeltoe.Extensions.Configuration.CloudFoundry;
 using Steeltoe.Extensions.Logging;
+using Steeltoe.Common.Hosting;
+using Steeltoe.Extensions.Configuration.CloudFoundry;
 using System.IO;
 using SimpleCachedPersistentStoreApp.AppStart;
 
@@ -18,7 +21,7 @@ namespace SimpleCachedPersistentStoreApp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             new WebHostBuilder()
                 .UseKestrel()
-                .UseCloudFoundryHosting()
+                .UseCloudHosting()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
