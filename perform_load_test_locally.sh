@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "** Warning: This Script will scale up your apps! **"
 
 echo "Runs load test against SimpleCachedApp or SimpleCachedPersistentStoreApp"
-read -p "Enter app name to target: " $target_app
+read -rp "Enter app name to target: " target_app
 
 PLAN_FILE_PATH="LoadTesting/Plan_LoadTest_SteelToeCachedApp.jmx"
 JMETER_LOG_FILE="./LoadTesting/results/jmeter_log_file.log"

@@ -34,17 +34,16 @@ If the app has to resource to the backing store, and a value for the resource is
 ## Manually Deploying the App
 Follow the requirements in this [README](../../README.md) to setup a CF environment with the required tiles.
 
-__Strongly recommend you use a smith environment for this example. You will also need to meet the pre-requisits listed on the [main Readme](../README.md).__ 
+__You will also need to meet the pre-requisits listed on the [main Readme](../README.md).__
 
 Once your CloudFoundry environment is setup, follow the next steps:
 
 ```
 cf api api.sys.env-name.cf-app.com
-cf login -u username -p password --skip-ssl-validation
-cf create-space system
-cf target -o "system" -s "system"
+cf login -u "$CF_USERNAME" -p "$CF_PASSWORD"
+cf target -o "$ORG" -s "$SPACE"
 cf marketplace
-cf create-service p-redis shared-vm redis_cache_01
+cf create-service p.redis on-demand-cache redis_cache_01
 cf create-service p.mysql db-small mysql_01
 ../../DBMigrations/perform_migration.sh
 cf push

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 echo "Checking for dependencies"
 if ! command -v -- mysql
@@ -22,15 +22,16 @@ wait_for() {
     done
 }
 
-read -p "Enter environment url, usually api.sys.env-name.cf-app.com: " ENV_API
-read -p "Enter environment username: " USERNAME
-read -sp "Enter environment password: " PASSWORD
+read -rp "Enter environment url, usually api.sys.env-name.cf-app.com: " CF_API
+read -rp "Enter environment username: " CF_USERNAME
+read -rsp "Enter environment password: " CF_PASSWORD
+read -rp "Enter org name: " ORG_NAME
+read -rp "Enter space name: " SPACE_NAME
 
-cf login -a "$ENV_API" -u "$USERNAME" -p "$PASSWORD" --skip-ssl-validation
-cf create-space system
-cf target -o "system" -s "system"
-cf create-service p.redis cache-small redis_01
-cf create-service p.mysql db-small sql_01
+cf login -a "$CF_API" -u "$CF_USERNAME" -p "$CF_PASSWORD"
+cf target -o "$ORG_NAME" -s "$SPACE_NAME"
+cf create-service p.redis "$(cf marketplace -s p.redis | grep Redis | awk '{print $1}')" redis_01
+cf create-service p.mysql "$(cf marketplace -s p.mysql | grep MySQL | awk '{print $1}')" sql_01
 
 wait_for redis_01
 wait_for sql_01
