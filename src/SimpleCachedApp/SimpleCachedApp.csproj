@@ -17,7 +17,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.5"/>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1"/>
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.5.1"/>
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="5.1.1"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="5.1.2"/>
     <PackageReference Include="MySql.Data" Version="8.0.20"/>
   </ItemGroup>
 </Project>
