@@ -8,7 +8,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Steeltoe.CloudFoundry.ConnectorCore" Version="2.4.4"/>
-    <PackageReference Include="Steeltoe.Management.CloudFoundryCore" Version="2.4.4"/>
+    <PackageReference Include="Steeltoe.Management.CloudFoundryCore" Version="3.0.0"/>
     <PackageReference Include="Steeltoe.Common.Hosting" Version="2.4.4"/>
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0"/>
