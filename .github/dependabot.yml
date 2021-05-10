@@ -1,0 +1,57 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/src/SimpleCachedApp"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Swashbuckle.AspNetCore
+    versions:
+    - 6.0.2
+    - 6.0.4
+    - 6.0.5
+    - 6.0.7
+    - 6.1.0
+    - 6.1.1
+    - 6.1.3
+  - dependency-name: Swashbuckle.AspNetCore.Annotations
+    versions:
+    - 6.0.2
+    - 6.0.4
+    - 6.0.5
+    - 6.0.7
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: Steeltoe.CloudFoundry.ConnectorCore
+    versions:
+    - 2.5.3
+  - dependency-name: Swashbuckle.AspNetCore.Filters
+    versions:
+    - 6.1.0
+- package-ecosystem: nuget
+  directory: "/src/SimpleCachedPersistentStoreApp"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Swashbuckle.AspNetCore.Annotations
+    versions:
+    - 6.0.2
+    - 6.0.4
+    - 6.0.5
+    - 6.0.7
+    - 6.1.0
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: Swashbuckle.AspNetCore
+    versions:
+    - 6.0.2
+    - 6.0.4
+    - 6.0.5
+    - 6.0.7
+    - 6.1.0
+    - 6.1.1
+  - dependency-name: Swashbuckle.AspNetCore.Filters
+    versions:
+    - 6.1.0
