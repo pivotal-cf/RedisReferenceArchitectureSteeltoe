@@ -1,3 +1,6 @@
+# :warning: [DEPRECATED]
+Please consider referencing the [SteeltoeOSS](https://github.com/SteeltoeOSS) repository and its [Redis sample project](https://github.com/SteeltoeOSS/Samples/tree/2.x/Connectors/src/AspDotNetCore/Redis) instead.
+
 # Redis Steeltoe Architecture Reference
 A serie of Example apps to showcase how to leverage PCF Redis with .NET Steeltoe Apps running on CloudFoundry.  
 Includes JMeter plans for load and perf testing.
